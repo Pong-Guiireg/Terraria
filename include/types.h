@@ -13,6 +13,8 @@
 typedef struct options_s {
     float sound_volume;
     float music_volume;
+    KeyboardKey move_up;
+    KeyboardKey move_down;
     KeyboardKey move_left;
     KeyboardKey move_right;
     KeyboardKey jump;

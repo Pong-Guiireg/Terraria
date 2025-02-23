@@ -23,7 +23,9 @@ void handle_menu(void)
     options_t options = {
         .sound_volume = 0.5f,
         .music_volume = 0.5f,
-        .move_left = KEY_A,
+        .move_up = KEY_Z,
+        .move_down = KEY_S,
+        .move_left = KEY_Q,
         .move_right = KEY_D,
         .jump = KEY_SPACE
     };
