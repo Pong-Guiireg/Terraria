@@ -1,7 +1,7 @@
-# 🎮 Terraria Clone
+# 🎮 Terraria Remake
 
 <div align="center">
-  <img src="assets/Dirt.png" alt="Logo" width="200"/>
+  <img src="assets/Logo.png" alt="Logo" width="200"/>
 
   [![Raylib](https://img.shields.io/badge/raylib-4.5.0-orange.svg)](https://www.raylib.com/)
   [![Language](https://img.shields.io/badge/language-C-yellow.svg)]()
