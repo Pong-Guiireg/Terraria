@@ -66,7 +66,7 @@ make
 .
 ├── Makefile
 ├── assets/
-│ └── Dirt.png
+│ └── Logo.png
 ├── include/
 │ ├── button.h
 │ ├── menu.h
