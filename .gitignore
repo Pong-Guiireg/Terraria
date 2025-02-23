@@ -1,0 +1,35 @@
+# Binary
+Terraria
+
+# Object files
+*.o
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Debug files
+*.dSYM/
+
+# Build directory
+build/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Coding style reports
+coding-style-reports.log
+
+# Temporary files
+*~
+.*.swp
+.*.swo
