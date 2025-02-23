@@ -35,15 +35,15 @@ void draw_key_bindings(options_t *options)
     DrawText("Contrôles", WINDOW_WIDTH / 2 - 250, start_y - spacing,
         30, BLACK);
     draw_key_binding((Rectangle){binding_x, start_y, 100, 40},
-        &options->move_up, "Haut", label_x);
+        &options->move_up, "Haut", label_x, options);
     draw_key_binding((Rectangle){binding_x, start_y + spacing, 100, 40},
-        &options->move_down, "Bas", label_x);
+        &options->move_down, "Bas", label_x, options);
     draw_key_binding((Rectangle){binding_x, start_y + spacing * 2, 100, 40},
-        &options->move_left, "Gauche", label_x);
+        &options->move_left, "Gauche", label_x, options);
     draw_key_binding((Rectangle){binding_x, start_y + spacing * 3, 100, 40},
-        &options->move_right, "Droite", label_x);
+        &options->move_right, "Droite", label_x, options);
     draw_key_binding((Rectangle){binding_x, start_y + spacing * 4, 100, 40},
-        &options->jump, "Saut", label_x);
+        &options->jump, "Saut", label_x, options);
 }
 
 static void handle_back_button(button_t back_button, bool *exit_menu)
