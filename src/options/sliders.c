@@ -4,7 +4,6 @@
 ** File description:
 ** Slider and key binding management
 */
-
 #include "../../include/sliders.h"
 
 void draw_slider(Rectangle slider, float *value, const char *text)
@@ -16,8 +15,12 @@ void draw_slider(Rectangle slider, float *value, const char *text)
     if (CheckCollisionPointRec(GetMousePosition(), slider) &&
         IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
         *value = (GetMousePosition().x - slider.x) / slider.width;
-        if (*value < 0.0f) *value = 0.0f;
-        if (*value > 1.0f) *value = 1.0f;
+        if (*value < 0.0f) {
+            *value = 0.0f;
+        }
+        if (*value > 1.0f) {
+            *value = 1.0f;
+        }
     }
 }
 
