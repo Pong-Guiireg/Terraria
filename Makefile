@@ -9,7 +9,9 @@ NAME = Terraria
 
 SRC = 	src/main.c \
 		src/menu.c \
-		src/options.c
+		src/button.c \
+		src/options/options.c \
+		src/options/sliders.c
 
 OBJ = $(SRC:.c=.o)
 

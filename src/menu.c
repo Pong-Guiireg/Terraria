@@ -4,42 +4,15 @@
 ** File description:
 ** Menu management functions
 */
-
 #include "../include/menu.h"
-
-static button_t create_button(float y, const char *text)
-{
-    button_t button;
-    float x_center = (float)WINDOW_WIDTH / 2 - BUTTON_WIDTH / 2;
-
-    button.rect = (Rectangle){x_center, y, BUTTON_WIDTH, BUTTON_HEIGHT};
-    button.text = text;
-    button.color = GRAY;
-    button.hover_color = DARKGRAY;
-    return button;
-}
+#include "../include/button.h"
+#include "../include/options.h"
 
 void init_window_fullscreen(void)
 {
-    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "My Game");
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Terraria");
     SetTargetFPS(60);
     ToggleFullscreen();
-}
-
-void draw_button(button_t button)
-{
-    Vector2 mouse = GetMousePosition();
-    Color current_color = button.color;
-
-    if (CheckCollisionPointRec(mouse, button.rect)) {
-        current_color = button.hover_color;
-    }
-    DrawRectangleRec(button.rect, current_color);
-    DrawText(button.text,
-        (int)(button.rect.x + BUTTON_WIDTH / 2 - MeasureText(button.text, 20) / 2),
-        (int)(button.rect.y + BUTTON_HEIGHT / 2 - 10),
-        20,
-        BLACK);
 }
 
 void handle_menu(void)
@@ -58,19 +31,23 @@ void handle_menu(void)
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);
-
-        draw_button(play_button);
-        draw_button(options_button);
-        draw_button(quit_button);
-
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-            Vector2 mouse = GetMousePosition();
-            if (CheckCollisionPointRec(mouse, quit_button.rect))
-                break;
-            if (CheckCollisionPointRec(mouse, options_button.rect))
-                handle_options_menu(&options);
-        }
+        draw_buttons(play_button, options_button, quit_button);
+        handle_mouse_input(quit_button, options_button, &options);
         EndDrawing();
+    }
+}
+
+void handle_mouse_input(button_t quit_button, button_t options_button,
+    options_t *options)
+{
+    Vector2 mouse;
+
+    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+        mouse = GetMousePosition();
+        if (CheckCollisionPointRec(mouse, quit_button.rect))
+            CloseWindow();
+        if (CheckCollisionPointRec(mouse, options_button.rect))
+            handle_options_menu(options);
     }
 }
 
