@@ -1,35 +1,22 @@
-# Binary
+# Exécutable
 Terraria
 
-# Object files
+# Dossiers de compilation
+obj/
+
+# Fichiers objets
 *.o
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Debug files
+# Fichiers de débogage
 *.dSYM/
+*.su
+*.idb
+*.pdb
 
-# Build directory
-build/
-
-# IDE specific files
-.vscode/
-.idea/
-
-# Coding style reports
+# Logs
+errors.txt
 coding-style-reports.log
 
-# Temporary files
-*~
-.*.swp
-.*.swo
+# Fichiers d'éditeurs
+.vscode/
+.idea/
